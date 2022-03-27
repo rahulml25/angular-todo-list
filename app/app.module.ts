@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodosComponent } from './components/todos/todos.component';
-import { TodoItemComponent } from './components/todos/todo-item/todo-item.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { AddTodoComponent } from './components/add-todo/add-todo.component';
+import { TodosComponent } from 'components/todos/todos.component';
+import { TodoItemComponent } from 'components/todos/todo-item/todo-item.component';
+import { NavbarComponent } from 'components/navbar/navbar.component';
+import { AddTodoComponent } from 'components/add-todo/add-todo.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
