@@ -1,10 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Todo } from 'models/Todo';
+import { Todo } from 'models/todo';
 
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['../../styles/components/add-todo.component.css']
+  styleUrls: ['../../styles/add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
 
@@ -19,7 +19,13 @@ export class AddTodoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  initInputs() {
+    this.title = "";
+    this.desc = "";
+  }
+
   onSubmit() {
+    if (this.title.length <= 0) return;
     const todo: Todo = {
       sno: 8,
       title: this.title,
@@ -27,6 +33,6 @@ export class AddTodoComponent implements OnInit {
       active: true
     };
     this.todoAdd.emit(todo);
+    this.initInputs();
   }
-
 }

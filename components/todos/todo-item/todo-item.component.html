@@ -1,5 +1,10 @@
 <div class="my-3">
-  <h5>{{todo.title}}</h5>
+  <h5 [ngClass]="{'strick': !todo.active}">{{todo.title}}</h5>
   <p>{{todo.desc}}</p>
-  <button class="btn btn-sm btn-danger" (click)="onClick(todo)">Delete</button>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" [id]="getCheckboxId()" (click)="onCheckboxClick()"
+      [checked]="!todo.active">
+    <label class="form-check-label" [for]="getCheckboxId()">Mark as Done</label>
+  </div>
+  <button class="btn btn-sm btn-danger" (click)="onDeleteClick()">Delete</button>
 </div>
